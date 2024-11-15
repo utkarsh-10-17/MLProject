@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        /* Reset and general styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        
+        /* Card styling */
+        .container {
+            background: #fff;
+            max-width: 500px;
+            width: 100%;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        /* Header styling */
+        h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Input fields styling */
+        label {
+            display: block;
+            margin-top: 1rem;
+            text-align: left;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        /* Button styling */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Result display styling */
+        .result {
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        /* Back link styling */
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .back-link:hover {
+            color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction using ML</h1>
+        <form method="post">
+            <label>Number of Pregnancies: <input type="text" name="Pregnancies"></label>
+            <label>Glucose Level: <input type="text" name="Glucose"></label>
+            <label>Blood Pressure: <input type="text" name="BloodPressure"></label>
+            <label>Skin Thickness: <input type="text" name="SkinThickness"></label>
+            <label>Insulin Level: <input type="text" name="Insulin"></label>
+            <label>BMI: <input type="text" name="BMI"></label>
+            <label>Diabetes Pedigree Function: <input type="text" name="DiabetesPedigreeFunction"></label>
+            <label>Age: <input type="text" name="Age"></label>
+            <button type="submit">Diabetes Test Result</button>
+        </form>
+
+        {% if result %}
+            <div class="result">
+                <h2>Result: {{ result }}</h2>
+            </div>
+        {% endif %}
+        
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>
